@@ -10,7 +10,7 @@ const MIN_MAX = /^minmax\((\S+),\s+(\S+)\)$/
 const EMPTY_CELL = /^..$/
 
 // Split column headers row, ignoring spaces inside parenthesis.
-export const splitRow = (columnHeaderRowString: string): string[] => {
+const splitRow = (columnHeaderRowString: string): string[] => {
     // A regex matching words with paranthesis containing comma and space
     // separated values or one or more non-space values followed by zero or more
     // spaces.
@@ -67,7 +67,7 @@ const validateSizeSpecification = (val: string): string => {
 
 // Given the column headers row, return whether each header represents a valid
 // grid column specification.
-export const validateColumnHeaders = (columnHeaders: string[]): string[][] => {
+const validateColumnHeaders = (columnHeaders: string[]): string[][] => {
     return columnHeaders.map(
         (val: string): string[] => [validateSizeSpecification(val)])
 }
@@ -94,7 +94,7 @@ const validateItemEntry = (gridCell: string, idx: number): string[] => {
 
 // Validate that standard rows have at least the row specification followed by
 // zero or more cell specifications.
-export const validateRow = (standardRow: string[], idx: number): string[][] => {
+const validateRow = (standardRow: string[], idx: number): string[][] => {
     const rowValues: string[][] = []
     if (standardRow.length == 0) {
         throw `Row number ${idx} is empty`
@@ -129,7 +129,7 @@ export const validateRow = (standardRow: string[], idx: number): string[][] => {
 
 // Keeps track of the left-most and right-most bounds for a given grid item.
 // These must match per row, or else the item is not forming a rectangle.
-export interface RowBounds {
+interface RowBounds {
     left: number;
     right: number;
 }
@@ -139,7 +139,7 @@ const rowBoundsEqual = (first: RowBounds, second: RowBounds): boolean => {
 }
 
 // Calculates the spanning dimensions of contiguous grid items per row.
-export const calculateRowBounds = (rowItems: string[][]): Map<string, RowBounds> => {
+const calculateRowBounds = (rowItems: string[][]): Map<string, RowBounds> => {
     const itemBounds = new Map<string, RowBounds>();
     rowItems.forEach((cell, cellIndex) => {
         for (const item of cell) {
@@ -220,3 +220,6 @@ export default (rows: string[]): string[][][] => {
     }
     return validatedRows
 }
+
+export type {RowBounds}
+export {EMPTY_CELL, calculateRowBounds, splitRow, validateColumnHeaders, validateRow}

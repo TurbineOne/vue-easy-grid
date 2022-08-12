@@ -1,8 +1,8 @@
-import {describe, expect, test} from 'vitest'
+import { describe, expect, test } from 'vitest'
 
-import {default as validateRows} from '@/easy-grid/validators'
-import type {RowBounds} from '@/easy-grid/validators'
-import {calculateRowBounds, splitRow, validateColumnHeaders, validateRow} from '@/easy-grid/validators'
+import { default as validateRows } from '@/easy-grid/validators'
+import type { RowBounds } from '@/easy-grid/validators'
+import { calculateRowBounds, splitRow, validateColumnHeaders, validateRow } from '@/easy-grid/validators'
 
 describe('splitRow', () => {
     test('splits on spaces', () => {
@@ -85,6 +85,10 @@ describe('validateRow', () => {
         expect(row).toEqual([['fit-content(40%)'], ['A', 'B'], ['C', 'D']])
     })
 
+    test('validates row with contiguous items in different orders', () => {
+        validateRow(['fit-content(40%)', 'A,B', 'B,A'], 0)
+    })
+
     test('validates empty cells', () => {
         const row = validateRow(['fit-content(40%)', '..', 'C,D'], 0)
         expect(row).toEqual([['fit-content(40%)'], [], ['C', 'D']])
@@ -152,4 +156,4 @@ describe('validateRows', () => {
             validateRows(['1fr 2fr', '1fr A,B C,D', '2fr C,D C,D'])
         }).toThrow(/C has bounds of 2, 2 on row 1 and bounds of 1, 2 on row 2. Bounds must match to form a rectangle./)
     })
-});
+})
