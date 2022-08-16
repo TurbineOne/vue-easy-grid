@@ -1,0 +1,15 @@
+{
+    "extends": "@vue/tsconfig/tsconfig.web.json",
+    "include": [
+      "src/examples/*.ts"
+    ],
+    "compilerOptions": {
+      "composite": true,
+      "baseUrl": ".",
+      "paths": {
+        "@/*": ["./src/*"]
+      },
+      "lib": ["es5", "dom"],
+      "types": ["cypress", "node", "cypress-visual-regression"]
+    }
+  }

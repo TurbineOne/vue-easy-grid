@@ -5,6 +5,9 @@
       "path": "./tsconfig.config.json"
     },
     {
+      "path": "./tsconfig.cypress.json"
+    },
+    {
       "path": "./tsconfig.app.json"
     },
     {

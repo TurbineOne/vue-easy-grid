@@ -6,17 +6,20 @@
     "build": "run-p type-check build-only",
     "preview": "vite preview --port 4173",
     "test:unit": "vitest --environment jsdom --reporter verbose",
-    "test:e2e": "start-server-and-test preview http://localhost:4173/ 'cypress open --e2e'",
-    "test:e2e:ci": "start-server-and-test preview http://localhost:4173/ 'cypress run --e2e'",
+    "test:component": "cypress open --env type=open --component",
+    "test:screenshot": "cypress run --env type=actual --component",
+    "test:screenshot:base": "cypress run --env type=base --component",
     "build-only": "vite build",
     "type-check": "vue-tsc --noEmit -p tsconfig.vitest.json --composite false",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
   },
   "dependencies": {
     "@emotion/css": "^11.10.0",
+    "cypress-visual-regression": "^1.7.0",
     "vue": "^3.2.37"
   },
   "devDependencies": {
+    "@cypress/vue": "^4.1.0",
     "@rushstack/eslint-patch": "^1.1.0",
     "@types/jsdom": "^16.2.14",
     "@types/node": "^16.11.45",

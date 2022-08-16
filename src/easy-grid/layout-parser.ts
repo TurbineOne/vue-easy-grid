@@ -113,9 +113,12 @@ export default (
             gridTemplateRows: gridTemplateRows.join(' ')
         })
     } else {
+        // If the grid is not column or row only, then remove the first entry
+        // from the gridTemplateRows, which corresponds to the first entry of
+        // the column headers row.
         gridDivCssObjects.push({
             gridTemplateColumns: gridTemplateColumns.join(' '),
-            gridTemplateRows: gridTemplateRows.join(' ')
+            gridTemplateRows: gridTemplateRows.slice(1).join(' ')
         })
     }
     const gridCellCssObjects = new Map<string, CSSObject>()
