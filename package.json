@@ -1,6 +1,17 @@
 {
-  "name": "vue-easy-grid",
-  "version": "0.0.0",
+  "name": "@turbineone/vue-easy-grid",
+  "version": "0.1.0",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/vue-easy-grid.umd.js",
+  "module": "./dist/vue-easy-grid.es.js",
+  "exports": {
+    ".": {
+      "require": "./dist/vue-easy-grid.umd.js",
+      "import": "./dist/vue-easy-grid.es.js"
+    }
+  },
   "scripts": {
     "dev": "vite",
     "build": "run-p type-check build-only",
