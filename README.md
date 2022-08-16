@@ -15,18 +15,18 @@ It draws inspiration from [easy-grid](https://github.com/google/easy-grid/) for 
 	</thead>
 	<tr>
 		<td>
-			<img width="289" alt="code-one" src="https://user-images.githubusercontent.com/208079/32584263-4ad479b2-c4ac-11e7-9308-03a4f26cdca9.png">
+            <a href="https://github.com/TurbineOne/vue-easy-grid/blob/e84d7f8226647f4ae34553919d192d5e4ad3eb98/src/examples/Plaid.vue">Plaid SFC</a>
 		</td>
 		<td>
-			<img width="306" alt="render-one" src="https://user-images.githubusercontent.com/208079/32584270-4ee201b4-c4ac-11e7-94d2-6e9899e4ea99.png">
+            <img width="289" alt="code-one" src="https://raw.githubusercontent.com/TurbineOne/vue-easy-grid/main/cypress/snapshots/base/Plaid.cy.ts/plaid-base.png">
 		</td>
 	</tr>
 	<tr>
 		<td>
-			<img width="381" alt="code-two" src="https://user-images.githubusercontent.com/208079/32584274-5123d4ac-c4ac-11e7-85c0-66ce58c5ef01.png">
+			<a href="https://github.com/TurbineOne/vue-easy-grid/blob/e84d7f8226647f4ae34553919d192d5e4ad3eb98/src/examples/ButtonBadge.vue">ButtonBadge SFC</a>
 		</td>
 		<td>
-			<img width="307" alt="render-two" src="https://user-images.githubusercontent.com/208079/32584277-539e76ec-c4ac-11e7-9f1a-067b50a7d71f.png">
+			<img width="307" alt="render-two" src="https://raw.githubusercontent.com/TurbineOne/vue-easy-grid/main/cypress/snapshots/base/ButtonBadge.cy.ts/buttonBadge-base.png">
 		</td>
 	</tr>
 </table>
