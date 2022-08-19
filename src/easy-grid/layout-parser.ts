@@ -142,8 +142,8 @@ export default (
     })
     return defineComponent({
         props: {
-            gridColumnGap: {type: Number, required: false},
-            gridRowGap: {type: Number, required: false},
+            gridColumnGap: {type: String, required: false},
+            gridRowGap: {type: String, required: false},
         },
         setup: (props, context) => {
             if (props.gridColumnGap) {

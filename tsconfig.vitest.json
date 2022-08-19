@@ -5,6 +5,7 @@
   ],
   "compilerOptions": {
     "composite": true,
+    "module": "CommonJS",
     "lib": [],
     "types": ["node", "jsdom"]
   }

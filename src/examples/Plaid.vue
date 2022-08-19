@@ -5,8 +5,8 @@ import { defineProps } from 'vue'
 import { SquareFillComponent } from './test-utils'
 
 const props = defineProps({
-    gridColumnGap: {type: Number, required: false},
-    gridRowGap: {type: Number, required: false},
+    gridColumnGap: {type: String, required: false},
+    gridRowGap: {type: String, required: false},
 })
 
 const gridClass = css`
