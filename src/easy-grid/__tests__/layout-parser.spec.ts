@@ -35,6 +35,17 @@ describe('extractDimensions', () => {
         expected.set('D', {top: 0, left: 2, bottom: 1, right: 2})
         expect(itemAreas).toEqual(expected)
     })
+
+    test('calcuates ItemAreas for single cell grid', () => {
+        const itemAreas = extractItemAreas([
+            [['1fr']],
+            [['1fr'], ['A', 'B']],
+        ])
+        const expected = new Map<string, ItemArea>();
+        expected.set('A', {top: 0, left: 0, bottom: 0, right: 0})
+        expected.set('B', {top: 0, left: 0, bottom: 0, right: 0})
+        expect(itemAreas).toEqual(expected)
+    })
 })
 
 describe('extractEmptyCells', () => {

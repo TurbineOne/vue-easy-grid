@@ -44,7 +44,9 @@ const extractItemAreas = (
     // Remove the column and row headers if this is not a column or row only
     // specification.
     let layout = parsedLayout;
-    if (parsedLayout.length > 1 && parsedLayout[0].length > 1) {
+    const isColumnOnly = parsedLayout.length == 1;
+    const isRowOnly = parsedLayout.length > 1 && parsedLayout[1].length == 1
+    if (!isColumnOnly && !isRowOnly) {
         layout = parsedLayout.slice(1).map(row => row.slice(1));
     } else if (parsedLayout.length == 1 || parsedLayout[0].length == 1) {
         return itemAreas;
