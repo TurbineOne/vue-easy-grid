@@ -145,6 +145,16 @@ describe('validateRows', () => {
         ])
     })
 
+    test('allows a single-cell grid', () => {
+        validateRows(['1fr', '1fr A,B'])
+    })
+
+    test('throws on too many entries in second row', () => {
+        expect(() => {
+            validateRows(['1fr', '1fr A,B A,B'])
+        }).toThrow(/only a single column header is defined/)
+    })
+
     test('throws on invalid number of row entries', () => {
         expect(() => {
             validateRows(['1fr 2fr', '1fr A,B C,D', '2fr E,F'])

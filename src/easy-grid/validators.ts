@@ -180,11 +180,26 @@ export default (rows: string[]): string[][][] => {
         return [validatedColumnHeaders]
     }
     const columnHeaderCount = validatedColumnHeaders.length
-    // If there is only a single header row value, then this is a row only
-    // specification and future rows should have only a single entry. Otherwise
-    // subsequent rows should have columnHeaderCount + 1 entries, including a
-    // row size specifier and item entries for each grid cell.
-    const expectedRowSize = columnHeaderCount === 1 ? 1 : columnHeaderCount + 1
+    // If there is only a single header row value, then this is either a
+    // row-only specificaction or a single cell grid. If the second row has two
+    // entries it is the latter. If it has one entry it's the former. Otherwise
+    // it's invalid. Given the results of this check, the 2nd row onwards should
+    // have columnHeaderCount + 1 entries.
+    let expectedRowSize = columnHeaderCount + 1
+    if (columnHeaderCount === 1) {
+        const secondRow = validateRow(splitRow(rows[1]), 1)
+        if (secondRow.length > 2) {
+            throw (
+                `Row 1 has ${secondRow.length} entries but only a single ` +
+                `column header is defined. It must define only a single ` +
+                `entry for a row-only specification or two entries for a ` +
+                `single cell grid.`
+            )
+        }
+        if (secondRow.length == 1) {
+            expectedRowSize = 1
+        }
+    }
     const validatedRows = [validatedColumnHeaders]
 
     let lastBounds = new Map<string, RowBounds>()
