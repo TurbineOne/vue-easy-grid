@@ -107,7 +107,7 @@ export default (
         gridDivCssObjects.push({
             gridTemplateColumns: gridTemplateColumns.join(' ')
         })
-    } else if (parsedLayout[0].length == 1) {
+    } else if (parsedLayout[0].length == 1 && parsedLayout[1].length == 1) {
         layoutType = LayoutType.RowOnly
         gridDivCssObjects.push({
             gridTemplateRows: gridTemplateRows.join(' ')

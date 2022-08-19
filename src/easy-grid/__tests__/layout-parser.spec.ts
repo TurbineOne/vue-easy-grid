@@ -93,7 +93,21 @@ describe('easyGrid', () => {
         }).toThrow(/Column-only easy grid requires/)
     })
 
-   test('throws when not enough children for row only spec', () => {
+    test('passes single grid spec', () => {
+        const gridComponent = easyGrid`
+            1fr
+        1fr A,B
+        `;
+        const funcComponent = () => {
+            return h(gridComponent, null, {
+                A: () => h('div'),
+                B: () => h('div'),
+            })
+        }
+        mount(funcComponent)
+    })
+
+    test('throws when not enough children for row only spec', () => {
         const gridComponent = easyGrid`
             1fr
             1fr
