@@ -10,7 +10,7 @@
       "import": "./dist/vue-easy-grid.es.js"
     }
   },
-  "types": "./dist/src/easy-grid/index.d.ts",
+  "types": "./dist/src/index.d.ts",
   "scripts": {
     "dev": "vite",
     "build": "run-p build-only type-check",

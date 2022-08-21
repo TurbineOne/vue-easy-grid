@@ -6,14 +6,16 @@
   ],
   "exclude": ["/src/examples/**"],
   "compilerOptions": {
-    "outDir": "dist",
-    "module": "ES2022",
     "composite": true,
+    "declaration": true,
+    "outDir": "./dist",
+    "moduleResolution": "node",
+    "lib": ["es2015"],
+    "module": "ES2015",
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
     },
-    "lib": ["es5", "dom"],
     "types": ["cypress", "node", "cypress-visual-regression"]
   }
 }
