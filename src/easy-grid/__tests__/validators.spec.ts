@@ -26,7 +26,7 @@ describe('validateColumnHeaders', () => {
     test('validates simple column specifications', () => {
         validateColumnHeaders([
             '1px', '20em', '23fr', '2%', 'min-content', 'max-content',
-            'auto'])
+            'auto', '2vh', '2vw'])
     })
 
     test('validates fit-content column specifications', () => {

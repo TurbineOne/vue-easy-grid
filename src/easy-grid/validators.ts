@@ -1,6 +1,8 @@
 const PIXEL_SIZE = /^\d+px$/
 const FLEX_SIZE = /^\d+fr$/
 const EM_SIZE = /^\d+em$/
+const VH_SIZE = /^\d+vh$/
+const VW_SIZE = /^\d+vw$/
 const PERCENT_SIZE = /^\d+%$/
 const AUTO = /^auto$/
 const MIN_CONTENT = /^min-content$/
@@ -36,7 +38,7 @@ const validateSizeSpecification = (val: string): string => {
             !!val.match(PIXEL_SIZE) || !!val.match(FLEX_SIZE) ||
             !!val.match(EM_SIZE) || !!val.match(PERCENT_SIZE) ||
             !!val.match(MIN_CONTENT) || !!val.match(MAX_CONTENT) ||
-            !!val.match(AUTO)
+            !!val.match(VH_SIZE) || !!val.match(VW_SIZE) || !!val.match(AUTO)
         )
     }
 
