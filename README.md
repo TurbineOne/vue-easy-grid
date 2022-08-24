@@ -57,6 +57,8 @@ This will start a browser pointing at 'index.html' in the [examples subdirectory
 
 To play around with the library, make changes to the [examples.js](https://github.com/google/easy-grid/blob/master/examples/examples.js) React app and re-run `npm run examples`.
 
+The package is also publically published at `@turbineone/vue-easy-grid`.
+
 
 ## Running the unit tests
 
@@ -91,7 +93,7 @@ affected the rendering.
 vue-easy-grid exports an `easyGrid` factory method:
 
 ```typescript
-import easyGrid from '../easy-grid'
+import easyGrid from '@turbineone/vue-easy-grid'
 ```
 
 ## Usage
