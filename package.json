@@ -14,12 +14,6 @@
   "files": ["dist"],
   "main": "./dist/vue-easy-grid.umd.js",
   "module": "./dist/vue-easy-grid.es.js",
-  "exports": {
-    ".": {
-      "require": "./dist/vue-easy-grid.umd.js",
-      "import": "./dist/vue-easy-grid.es.js"
-    }
-  },
   "typings": "./dist/src/index.d.ts",
   "scripts": {
     "dev": "vite",
