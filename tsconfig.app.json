@@ -1,5 +1,5 @@
 {
-  "extends": "@vue/tsconfig/tsconfig.web.json",
+  "extends": "@vue/tsconfig/tsconfig.json",
   "include": [
     "env.d.ts",
     "src/**/*",
@@ -9,7 +9,8 @@
     "composite": true,
     "declaration": true,
     "outDir": "./dist",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
+    "noEmit": false,
     "lib": ["es2015"],
     "module": "ES2015",
     "baseUrl": ".",
